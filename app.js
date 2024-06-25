@@ -16,6 +16,8 @@
 //require("express") importa el módulo express en el archivo app.js.
 const express = require("express");
 
+const PORT = 3000;
+
 //Paso 5: Crear una instancia de la aplicación express
 
 //express() crea una instancia de la aplicación express.
@@ -36,10 +38,28 @@ app.get("/", (req, res) => {
 
 //listen es un método de la aplicación express que inicia el servidor y lo hace escuchar en un puerto específico.
 //listen toma dos argumentos: el número de puerto en el que se escuchará y una función de devolución de llamada que se ejecutará una vez que el servidor esté escuchando.
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("Server is running on port 3000");
-  console.log("http://localhost:3000}");
+  console.log(`http://localhost:${PORT}`); // constante PORT después del paso 13
 });
 
 //Paso 8: Ejecutar la aplicación
 //node app.js
+
+//Paso 9: npm init para crear package.json
+//npm init
+
+//Paso 10: npm start para ejecutar la aplicación
+//npm start
+
+//Paso 11: editar package.json para agregar un script de inicio
+//scripts es una sección en el archivo package.json que se utiliza para definir comandos de scripts que se pueden ejecutar con npm.
+//start es un script que se puede ejecutar con npm start.
+//start se utiliza para iniciar la aplicación.
+
+//Paso 12: npm start para ejecutar la aplicación con el script de inicio
+//npm start
+
+//Paso opcional: "node --watch app.js" para reiniciar la aplicación automáticamente al guardar cambios
+
+//Paso 13: nos devolvimos al inicio y creamos constante port para que sea más fácil cambiar el puerto en el futuro
