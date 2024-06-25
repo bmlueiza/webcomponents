@@ -30,14 +30,15 @@ const app = express();
 //"/" es la ruta raíz de la aplicación.
 //req es un objeto que representa la solicitud HTTP y res es un objeto que se utiliza para enviar una respuesta HTTP.
 //send envía una respuesta HTTP con el contenido "Hello World! From Express". Esto finaliza la respuesta y envía la respuesta al cliente.
-app.get("/", (req, res) => {
+/* app.get("/", (req, res) => {
   res.send("Hello World! From Express");
-});
+}); */
 
 //Paso 7: Iniciar el servidor
 
 //listen es un método de la aplicación express que inicia el servidor y lo hace escuchar en un puerto específico.
 //listen toma dos argumentos: el número de puerto en el que se escuchará y una función de devolución de llamada que se ejecutará una vez que el servidor esté escuchando.
+app.use("/", express.static("src"));
 app.listen(PORT, () => {
   console.log("Server is running on port 3000");
   console.log(`http://localhost:${PORT}`); // constante PORT después del paso 13
@@ -63,3 +64,12 @@ app.listen(PORT, () => {
 //Paso opcional: "node --watch app.js" para reiniciar la aplicación automáticamente al guardar cambios
 
 //Paso 13: nos devolvimos al inicio y creamos constante port para que sea más fácil cambiar el puerto en el futuro
+
+//Paso 14: estructuramos el proyecto en carpetas y archivos separados
+//Se crea carpeta src con archivo index.html
+//Se crea carpeta puclic con archivo style.css
+//Se comenta el:
+/* app.get("/", (req, res) => {
+  res.send("Hello World! From Express");
+}); */
+//Se agrega app.use("/", express.static("src")); para servir archivos estáticos desde la carpeta src. Esto permite servir el archivo index.html en la ruta raíz de la aplicación. Línea 41
