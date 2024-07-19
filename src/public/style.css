@@ -1,3 +1,17 @@
-html {
-  background-color: darkblue;
+:root {
+  --primary-color: #7949ff;
+}
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+h2 {
+  color: var(--primary-color);
 }
